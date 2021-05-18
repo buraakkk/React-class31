@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.guarantee{
+  display: flex;
+  flex-direction: row;
+}
+
+.guaranteeOrders{
+  width: 100%;
+  border: 2px solid #262626;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

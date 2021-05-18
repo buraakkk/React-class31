@@ -10,14 +10,14 @@ function Hobby({ hobby }) {
 }
 
 function HobbyList() {
-  const title = "My Hobby List" ;
+  const title = "My Hobby List";
   const hobbies = [
     "Surfing",
     "Rock climbing",
     "Mountain biking",
     "Breakdancing",
   ];
-
+  //Hobby(key,hobby) ?
   return (
     <div>
       <div>
@@ -26,7 +26,7 @@ function HobbyList() {
 
       <div>
         {hobbies.map((hobby, index) => {
-          return <Hobby key={index} hobby={hobby} />; // Is that line same with Hobby(hobby) ?
+          return <Hobby key={index} hobby={hobby} />;
         })}
       </div>
     </div>
