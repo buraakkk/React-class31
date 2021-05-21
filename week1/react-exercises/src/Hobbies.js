@@ -10,7 +10,6 @@ function Hobby({ hobby }) {
 }
 
 function HobbyList() {
-  const title = "My Hobby List";
   const hobbies = [
     "Surfing",
     "Rock climbing",
@@ -21,7 +20,7 @@ function HobbyList() {
   return (
     <div>
       <div>
-        <h1>{title}</h1>
+        <h1> My Hobby List</h1>
       </div>
 
       <div>
