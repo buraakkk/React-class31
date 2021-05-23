@@ -1,7 +1,7 @@
 import React from "react";
 
 function Guarantee() {
-  const GuaranteeInformation = [
+  const GuaranteeInfo = [
     {
       img: "f-delivery.png",
       title: "Free Shipping",
@@ -24,7 +24,7 @@ function Guarantee() {
 
   return (
     <div className="guarantee-container">
-      {GuaranteeInformation.map((guarantee) => {
+      {GuaranteeInfo.map((guarantee) => {
         return (
           <div>
             <img src={guarantee.img} alt={guarantee.title} />

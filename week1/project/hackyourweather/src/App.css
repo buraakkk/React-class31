@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+.cityWeather {
+  border: 2px solid black;
+  margin-top: 2vh;
+  padding: 2em;
+}

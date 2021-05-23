@@ -2,9 +2,9 @@ import React from "react";
 import "./App.css";
 
 
-import HobbyList from "./Hobbies";
-import Guarantee from "./Guarantee";
-import Counter from "./Counter";
+import HobbyList from "./components/Hobbies";
+import Guarantee from "./components/Guarantee";
+import Counter from "./components/Counter";
 
 
 function App() {

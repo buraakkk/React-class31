@@ -3,7 +3,7 @@ import cities from "./city-weather.json";
 
 function Weather() {
   const cityWeather = cities.map((city) => (
-    <div>
+    <div className="cityWeather">
       <h1>
         {city.name}, {city.sys.country}
       </h1>
@@ -16,8 +16,6 @@ function Weather() {
       </p>
     </div>
   ));
-
-  return <p>{cityWeather}</p>;
+  return <div>{cityWeather}</div>;
 }
-
 export default Weather;
