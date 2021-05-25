@@ -39,4 +39,4 @@ function Guarantee() {
 
 export default Guarantee;
 
-//Guarantee({img, title, description});
+
