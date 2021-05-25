@@ -1,7 +1,7 @@
 import React from "react";
 
 function Hobby({ hobby }) {
-  //Is it a functional component  ?
+
   return (
     <>
       <li>{hobby}</li>
