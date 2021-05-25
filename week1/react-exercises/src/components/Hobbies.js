@@ -16,7 +16,7 @@ function HobbyList() {
     "Mountain biking",
     "Breakdancing",
   ];
-  //Hobby(key,hobby) ?
+
   return (
     <div>
       <div>
