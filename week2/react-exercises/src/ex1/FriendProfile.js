@@ -15,11 +15,11 @@ const FriendProfile = ({ friend }) => {
      
       <ul>
         <img src={image} alt={firstName} />
-        <li>Name: {title}. {firstName}{lastName}</li>
+        <li><strong>Name: {title}. {firstName}{lastName}</strong></li>
         <li>Address: {city} - {country}</li>
-        <li>Email Address: {email}</li>
+        <li><strong>Email Address: {email}</strong></li>
         <li>Phone Number: {phoneNumber}</li>
-        <li>Gender: {gender}</li>
+        <li><strong>Gender: {gender}</strong></li>
       </ul>
     );
 };
