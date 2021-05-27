@@ -45,8 +45,7 @@
   background-color: orange;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   width: 50%;
-  margin: auto;
-  margin-bottom: 1%;
+  margin: 2% auto 5% auto;
 }
 
 .dog {
@@ -54,14 +53,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color:bisque;
+  background-color: bisque;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   width: 50%;
-  margin: auto;
-  margin-bottom: 1%;
+  margin: 2% auto 5% auto;
 }
 
 .dog img {
   width: 150px;
   height: 150px;
+}
+.Joke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lavenderblush;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  margin: 2% auto 5% auto;
 }
