@@ -6,12 +6,32 @@ function Weather() {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [searchBtn, setSearchBtn] = useState("");
 
   const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchBtn}&APPID=${API_KEY}&units=metric`;
 
+  function fetchSuccessful(data) {
+    setError(null);
+    setCities((cities) => {
+      const searchedCity = cities.some(
+        (searched) => searched.name === data.name
+      );
+      if (searchedCity) {
+        setError(new Error("City already exist..."));
+        return cities;
+      }
+      return [data, ...cities];
+    });
+  }
+  function fetchError(err) {
+    setError(err);
+  }
+  function fetchFinally() {
+    setIsLoading(false);
+  }
+  
   useEffect(() => {
     async function weatherData() {
       try {
@@ -39,34 +59,16 @@ function Weather() {
         }
       }
     }
-    async function fetchSuccessful(data) {
-      setError(null);
-      setCities((cities) => {
-        const searchedCity = cities.some(
-          (searched) => searched.name === data.name
-        );
-        if (searchedCity) {
-          setError(new Error("City already exist..."));
-          return cities;
-        }
-        return [data, ...cities];
-      });
-    }
-    async function fetchError(err) {
-      setError(err);
-    }
-    async function fetchFinally() {
-      setIsLoading(false);
-    }
     weatherData();
   }, [searchBtn, url]);
 
   return (
     <div>
+      <h1>Weather</h1>
       <Search
         setSearchBtn={setSearchBtn}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
       />
 
       {isLoading && <p>Loading...</p>}
@@ -82,5 +84,3 @@ function Weather() {
 }
 
 export default Weather;
-
-
