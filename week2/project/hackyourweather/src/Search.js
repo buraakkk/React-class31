@@ -4,10 +4,12 @@ function Search(props) {
   return (
     <div>
       <input
+        placeholder="A city name"
         type="text"
-        onChange={(e) => props.setSearchTerm(e.target.value)}
+        value={props.searchInput}
+        onChange={(event) => props.setSearchInput(event.target.value)}
       />
-      <button onClick={() => props.setSearchBtn(props.searchTerm)}>
+      <button onClick={(event) => props.setSearchBtn(props.searchInput)}>
         Search
       </button>
     </div>
