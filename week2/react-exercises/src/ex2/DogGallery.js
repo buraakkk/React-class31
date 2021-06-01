@@ -8,12 +8,12 @@ const DogGallery = () => {
   const [isLoading, setIsLoading] = useState(false);
   const url = "https://dog.ceo/api/breeds/image/random";
 
-  async function getDogPhoto() {
+  const getDogPhoto = async () => {
     try {
       setIsLoading(true);
       const response = await fetch(url);
       const data = await response.json();
-      setDogPhotos((prevState) => [...prevState, data.message]);
+      setDogPhotos((prevState) => [data.message, ...prevState]);
     } catch (error) {
       setError(true);
     } finally {
