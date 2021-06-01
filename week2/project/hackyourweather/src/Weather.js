@@ -33,7 +33,7 @@ function Weather() {
   }
   
   useEffect(() => {
-    async function weatherData() {
+    (async () => {
       try {
         setIsLoading(true);
         const res = await fetch(url);
@@ -44,7 +44,7 @@ function Weather() {
       } finally {
         fetchFinally();
       }
-    }
+    })();
     async function condition(res, data) {
       switch (res.status) {
         case 200: {
@@ -59,7 +59,6 @@ function Weather() {
         }
       }
     }
-    weatherData();
   }, [searchBtn, url]);
 
   return (
