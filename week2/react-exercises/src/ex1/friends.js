@@ -13,28 +13,14 @@ const Friend = () => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      condition(res, data);
+      setError(null);
+      setFriend(data.results[0]);
     } catch (error) {
       setError(error);
     } finally {
       setIsLoading(false);
     }
   };
-  async function condition(res,data) {
-    switch (res.status) {
-      case 200: {
-        setError(null);
-        setFriend(data.results[0]);
-        break;
-      }
-      case 404: {
-        setError(error);
-        break;
-      }
-      default: {
-      }
-    }
-  }
 
   return (
     <div className="friend">

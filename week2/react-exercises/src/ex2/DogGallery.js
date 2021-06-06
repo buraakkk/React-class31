@@ -11,8 +11,8 @@ const DogGallery = () => {
   const getDogPhoto = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(url);
-      const data = await response.json();
+      const res = await fetch(url);
+      const data = await res.json();
       setDogPhotos((prevState) => [data.message, ...prevState]);
     } catch (error) {
       setError(true);
@@ -20,14 +20,14 @@ const DogGallery = () => {
       setIsLoading(false);
       setError(false);
     }
-  }
+  };
 
   return (
     <div className="dog">
       <h1> 👋 Find your dog here 👋 </h1>
       <Button getDogPhoto={getDogPhoto} />
       {isLoading && <p>Loading...</p>}
-      {isError && <p>Error!</p>}
+      {isError && <p>Something went wrong</p>}
       {dogPhotos.length > 0 ? (
         dogPhotos.map((photoURL) => (
           <DogPhoto key={photoURL.id} dogPhoto={photoURL} />

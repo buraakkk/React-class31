@@ -9,7 +9,7 @@ function Weather() {
   const [searchInput, setSearchInput] = useState("");
   const [searchBtn, setSearchBtn] = useState("");
 
-  const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
+  const API_KEY = "a8dcd37a5afddf53021778af3c388e85";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchBtn}&APPID=${API_KEY}&units=metric`;
 
   function fetchSuccessful(data) {
@@ -45,19 +45,11 @@ function Weather() {
         fetchFinally();
       }
     })();
-    async function condition(res, data) {
-      switch (res.ok) {
-        case true: {
-          fetchSuccessful(data);
-          break;
-        }
-        case false: {
-          fetchError(new Error("Not found"));
-          break;
-        }
-        default: {
-        }
+    function condition(res, data) {
+      if (!res.ok) {
+        throw new Error("Enter a proper city name");
       }
+      fetchSuccessful(data);
     }
   }, [searchBtn, url]);
 
