@@ -46,12 +46,12 @@ function Weather() {
       }
     })();
     async function condition(res, data) {
-      switch (res.status) {
-        case 200: {
+      switch (res.ok) {
+        case true: {
           fetchSuccessful(data);
           break;
         }
-        case 404: {
+        case false: {
           fetchError(new Error("Not found"));
           break;
         }
