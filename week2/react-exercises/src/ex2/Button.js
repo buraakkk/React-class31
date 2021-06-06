@@ -1,6 +1,6 @@
 const Button = ({ getDogPhoto }) => {
   return (
-    <button type="button" class="btn btn-success" onClick={getDogPhoto}>
+    <button type="button" className="btn btn-success" onClick={getDogPhoto}>
       Get a Dog!
     </button>
   );

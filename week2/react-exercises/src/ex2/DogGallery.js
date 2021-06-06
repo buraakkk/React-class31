@@ -29,7 +29,9 @@ const DogGallery = () => {
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error!</p>}
       {dogPhotos.length > 0 ? (
-        dogPhotos.map((dogPhotoUrl) => <DogPhoto dogPhoto={dogPhotoUrl} />)
+        dogPhotos.map((photoURL) => (
+          <DogPhoto key={photoURL.id} dogPhoto={photoURL} />
+        ))
       ) : (
         <p>Get your first dog by clicking the button!</p>
       )}
