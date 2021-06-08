@@ -47,7 +47,7 @@ function Weather() {
     })();
     function condition(res, data) {
       if (!res.ok) {
-        throw new Error("Enter a proper city name");
+        throw new Error(`Enter a proper city name (error is ${res.status})`);
       }
       fetchSuccessful(data);
     }

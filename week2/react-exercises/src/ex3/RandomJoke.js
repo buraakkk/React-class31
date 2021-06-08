@@ -3,7 +3,7 @@ import Joke from "./Joke";
 
 const RandomJoke = () => {
   const [joke, setJoke] = useState({});
-  const [isError, setError] = useState(false);
+  const [isError, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const url = "https://official-joke-api.appspot.com/random_joke";
 
@@ -15,10 +15,10 @@ const RandomJoke = () => {
         const data = await res.json();
         setJoke(data);
       } catch (err) {
-        setError(true);
+        setError(err);
       } finally {
         setIsLoading(false);
-        setError(false);
+        setError(null);
       }
     };
     getJoke();
@@ -28,7 +28,7 @@ const RandomJoke = () => {
     <div className="Joke">
       <h1> 👋 Find your joke here 👋 </h1>
       {isLoading && <p>Loading...</p>}
-      {isError && <p>Something went wrong</p>}
+      {isError && <p>Error is {isError.message}</p>}
       {!isError && !isLoading && Object.keys(joke).length > 0 && (
         <Joke joke={joke} />
       )}

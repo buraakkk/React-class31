@@ -27,8 +27,8 @@ const Friend = () => {
       <h1> 👋 Find your friend here 👋 </h1>
       <Button getFriend={getFriend} />
       {isLoading && <p>Loading...</p>}
-      {error && <p>Something went wrong</p>}
-      {Object.entries(friend).length > 0 ? (
+      {error && <p>Error is {error.message}</p>}
+      {!isLoading && !error && Object.entries(friend).length > 0 ? (
         <FriendProfile friend={friend} />
       ) : (
         <p>Find your first friend by clicking the button!</p>
